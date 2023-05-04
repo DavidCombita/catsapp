@@ -22,26 +22,29 @@
             tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
-            android:id="@+id/textView_name"
+            android:id="@+id/textView_country"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
             android:text="tittle"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
         <TextView
-            android:id="@+id/textView_description"
-            android:layout_width="match_parent"
+            android:id="@+id/textView_smart"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="Inteligencia "
             android:textColor="@color/black"
-            android:text="description example"
-            android:maxLines="3"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView_name" />
+            app:layout_constraintHorizontal_bias="0.524"
+            app:layout_constraintStart_toEndOf="@+id/textView_country"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            app:layout_constraintVertical_bias="1.0" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

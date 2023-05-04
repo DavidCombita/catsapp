@@ -21,8 +21,8 @@ class CatsAdapter : RecyclerView.Adapter<CatsViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: CatsViewHolder, position: Int) {
-        holder.tittle.text = catsInfo[position].name
-        holder.description.text = catsInfo[position].description
+        holder.origen.text = catsInfo[position].origin
+        holder.inteligencia.text = "Inteligencia: ${catsInfo[position].intelligence}"
         Picasso.get()
             .load("https://cdn2.thecatapi.com/images/"+catsInfo[position].referenceImageID+".jpg")
             .error(R.drawable.ic_launcher_background)
@@ -40,7 +40,7 @@ class CatsAdapter : RecyclerView.Adapter<CatsViewHolder>() {
 }
 
 class CatsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-    var tittle: TextView = itemView.findViewById(R.id.textView_name)
-    var description: TextView = itemView.findViewById(R.id.textView_description)
+    var origen: TextView = itemView.findViewById(R.id.textView_country)
+    var inteligencia: TextView = itemView.findViewById(R.id.textView_smart)
     var image: ImageView = itemView.findViewById(R.id.imageView)
 }

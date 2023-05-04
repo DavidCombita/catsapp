@@ -1,7 +1,6 @@
 package com.davidcombita.di
 
 import com.davidcombita.BuildConfig
-import com.davidcombita.api.ApiCatsService
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import dagger.Module

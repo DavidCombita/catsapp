@@ -38,6 +38,7 @@ android {
             dimension "CatsApp"
 
             buildConfigField("String", "BASE_CATS", "\"https://api.thecatapi.com/\"")
+            buildConfigField("String", "APIKEY", "\"bda53789-d59e-46cd-9bc4-2936630fde39\"")
         }
     }
     compileOptions {
@@ -84,6 +85,10 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     implementation "com.squareup.okhttp3:logging-interceptor:4.10.0"
 
+    //test
+    testImplementation 'junit:junit:4.+'
+    testImplementation "io.mockk:mockk:1.12.2"
+    testImplementation 'org.mockito:mockito-core:2.2.6'
 }
 
 kapt {

@@ -2,17 +2,15 @@ package com.davidcombita.domain
 
 import com.davidcombita.BuildConfig
 import com.davidcombita.data.models.Cat
-import com.davidcombita.data.respons.CatsResponse
+import com.davidcombita.data.response.CatsResponse
 import com.davidcombita.repository.CatsRepository
 import io.mockk.*
 import io.mockk.impl.annotations.RelaxedMockK
 import kotlinx.coroutines.runBlocking
-import org.junit.Assert.*
 
 import org.junit.After
 import org.junit.Before
 import org.junit.Test
-import org.mockito.Mockito
 import retrofit2.Response
 
 class GetCatsUseCaseTest {
@@ -34,10 +32,8 @@ class GetCatsUseCaseTest {
 
     @Test
     fun `test if you call repository and return empty list`() = runBlocking{
-        val catsInfo = CatsResponse()
-        catsInfo.data = emptyList()
         //Given
-        coEvery { catsRepository.getCatsInformation(BuildConfig.APIKEY) } returns Response.success(catsInfo)
+        coEvery { catsRepository.getCatsInformation(BuildConfig.APIKEY) } returns Response.success(emptyList())
         //When
         getCatsUseCase(BuildConfig.APIKEY)
         //Then
@@ -46,7 +42,7 @@ class GetCatsUseCaseTest {
 
     @Test
     fun `test call repository and return list`() = runBlocking{
-        val catsResponse = Response.success(CatsResponse())
+        val catsResponse = Response.success(emptyList<Cat>())
         //Given
         coEvery { catsRepository.getCatsInformation(BuildConfig.APIKEY) } returns catsResponse
         //When
